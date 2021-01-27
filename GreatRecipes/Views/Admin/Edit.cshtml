@@ -1,0 +1,43 @@
+﻿@model Recipe
+
+@{
+    ViewBag.Title = "Edit Recipe";
+    Layout = "_AdminLayout";
+}
+
+<form asp-controller="Admin" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="RecipeId" />
+
+    <p></p>
+    <div class="form-group">
+        <label asp-for="RecipeOwnerName"><h4>Your Name:</h4></label>
+        <input class="form-control" asp-for="RecipeOwnerName" />
+    </div>
+    <p></p>
+
+    <div class="form-group">
+        <label asp-for="RecipeName"><h4>Recipe Name:</h4></label>
+        <input class="form-control" asp-for="RecipeName" />
+        <p></p>
+    </div>
+    <label asp-for="BriefDescription"><h4>Brief Description:</h4></label>
+    <input class="form-control" asp-for="BriefDescription" />
+    <p></p>
+
+    <div class="form-group">
+        <label asp-for="Ingradients"><h4>Ingradients:</h4></label>
+        <input class="form-control" asp-for="Ingradients" />
+    </div>
+    <p></p>
+
+    <div class="form-group">
+        <label asp-for="Directions"><h4>Directions:</h4></label>
+        <input class="form-control" asp-for="Directions" />
+    </div>
+    <p></p>
+
+    <div class="text-center">
+        <button class="btn btn-primary" type="submit">Save</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>

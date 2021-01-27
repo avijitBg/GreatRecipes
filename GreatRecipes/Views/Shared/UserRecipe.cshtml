@@ -1,0 +1,48 @@
+﻿@model GreatRecipes.Models.Recipe
+
+<div style="margin-left:50px; margin-right:50px" class="form-group">
+    <form class="p-a-1" asp-controller="Admin" asp-action="AddRecipe" method="post">
+        <div asp-validation-summary="All"></div>
+        <p class="h3 mb-4"><b>Add Your Recipe</b></p>
+
+        <p></p>
+        <div class="form-group">
+            <label asp-for="RecipeOwnerName"><h4>Your Name:</h4></label>
+            <input class="form-control" asp-for="RecipeOwnerName" />
+        </div>
+        <p></p>
+
+        <div class="form-group">
+            <label asp-for="RecipeName"><h4>Recipe Name:</h4></label>
+            <input class="form-control" asp-for="RecipeName" />
+            <p></p>
+        </div>
+        <label asp-for="BriefDescription"><h4>Brief Description:</h4></label>
+        <input class="form-control" asp-for="BriefDescription" />
+        <p></p>
+
+        <div class="form-group">
+            <label asp-for="Ingradients"><h4>Ingradients:</h4></label>
+            <input class="form-control" asp-for="Ingradients" />
+        </div>
+        <p></p>
+
+        <div class="form-group">
+            <label asp-for="Directions"><h4>Directions:</h4></label>
+            <input class="form-control" asp-for="Directions" />
+        </div>
+        <p></p>
+
+        <button type="submit" class="btn btn-dark">Save Recipe</button>
+        @using (Html.BeginForm("Index", "Admin"))
+        {
+            <button type="submit" class="btn btn-dark">Cancel</button>
+        }
+    </form>
+    <p></p>
+    <div>
+        <a asp-action="Index"><h4>Back to Homepage</h4></a>
+        <p></p>
+    </div>
+</div>
+

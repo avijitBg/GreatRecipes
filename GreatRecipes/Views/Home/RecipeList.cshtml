@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Recipe>
+@{
+    ViewBag.Title = "Recipe List";
+}
+
+<div>
+    <h3>We've gathered all of the most loved, highest rated dinner recipes in our Taste of Home collection. It’s the best of the best!</h3>
+    <table class="table">
+        <tbody>
+            @foreach (var r in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="@r.ImageUrl" />
+                    </td>
+                    <td>
+                        <a asp-route-recipeId=@r.RecipeId
+                           asp-action="ViewRecipe">
+                            <h3>@r.RecipeName</h3>
+                        </a><br>
+                        <h4>@r.BriefDescription</h4>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p></p>
+    <div style="text-align:center">
+        <a asp-action="Index"><h4>Back to Homepage</h4></a>
+    </div>
+</div>

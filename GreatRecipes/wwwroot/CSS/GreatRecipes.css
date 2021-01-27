@@ -1,0 +1,62 @@
+﻿#content {
+}
+
+.house1 {
+    float: right;
+}
+
+#footer {
+    background-color: #333333;
+    color: #FFFFFF;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+h1 {
+    color: #FFFFFF;
+    background-color: #669999;
+    text-align: center
+}
+
+h2 {
+    text-align:center; 
+    color:teal;
+}
+
+h3 {
+    color: #336600;
+}
+
+#allpage {
+    border-color: blueviolet;
+    border-style: solid;
+    border-width: medium;
+    border-radius: 20px;
+    box-shadow: 5px 10px #888888;
+    width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 35px;
+}
+
+img {
+    width:250px;
+    height:260px;
+}
+
+form {
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+table {
+    width: 100%;
+    text-align:left;
+}
+td{
+    width: 249px;
+    text-align:"left";
+}
+
+

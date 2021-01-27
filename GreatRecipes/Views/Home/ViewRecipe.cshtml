@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Recipe>
+
+@{
+    ViewBag.Title = "View Recipe";
+}
+
+@foreach (var r in Model)
+{
+    <div style="text-align:center">
+        <img src="@r.ImageUrl" />
+    </div>
+    <a asp-route-recipeId=@r.RecipeId
+       asp-action="ReviewRecipe">
+        <h3>@r.RecipeName</h3>
+    </a><br>
+    <h4><em>@r.RecipeOwnerName</em></h4>
+    <h3>Ingradients</h3>
+    <ul>
+        @r.Ingradients
+    </ul>
+    <h3>Directions</h3>
+    <ul>
+        @r.Directions
+    </ul>
+}
+
+<h3>You are all set; enjoy your meal now</h3>
+<p></p>
+<div style="text-align:center">
+    <a asp-action="ReviewRecipe"><h4>Review This Recipe</h4></a>
+    <a asp-action="RecipeList"><h4>View Another Recipe</h4></a>
+</div>
