@@ -1,0 +1,41 @@
+﻿@model Review
+@{
+    ViewBag.Title = "Add Review";
+
+}
+<div class="panel panel-success">
+    <div class="panel-body">
+
+        <form class="p-3" asp-action="AddReview" method="post">
+            <input type="hidden" asp-for="ReviewId" />
+            <input type="hidden" asp-for="RecipeId" />
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="Rate">Rate</label>
+                    <select class="form-control" asp-for="Rate">
+                        <option value="">--Select--</option>
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                    </select>
+                </div>
+             </div>
+             
+            <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label asp-for="Comment">Comments</label>
+                        <textarea class="form-control" rows="8" asp-for="Comment"></textarea>
+                    </div>
+            </div>
+
+            <br />
+            <div class="text-right">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <button class="btn btn-primary" asp-action="Index" asp-controller="Home">Cancel</button>
+            </div>
+</form>
+    </div>
+</div>

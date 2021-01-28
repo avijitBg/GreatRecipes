@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using GreatRecipes.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace GreatRecipes
 {
@@ -25,9 +26,18 @@ namespace GreatRecipes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["Data:GreatRecipes:ConnectionString"]));
+
+            services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration["Data:RecipeIdentity:ConnectionString"]));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppIdentityDbContext>()
+                .AddDefaultTokenProviders();
+
             services.AddTransient<IRecipeRepository, EFRecipeRepository>();
-            services.AddMvc();
-            services.AddSession();
+            services.AddTransient<IReviewRepository, EFReviewRepository>();
+            services.AddMvc()
+                .AddSessionStateTempDataProvider();
+            services.AddSession(); ;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
