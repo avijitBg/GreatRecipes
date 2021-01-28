@@ -45,9 +45,8 @@ namespace GreatRecipes.Controllers
                     if ((await signInManager.PasswordSignInAsync(user,
                         loginModel.Password, false, false)).Succeeded)
                     {
-                        return Redirect(loginModel?.ReturnUrl ?? "/Home");
+                        return Redirect(loginModel?.ReturnUrl ?? "/Home/Index");
                     }
-
                 }
             }
             ModelState.AddModelError("", "Invalid name or password");

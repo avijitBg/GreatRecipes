@@ -37,7 +37,7 @@ namespace GreatRecipes.Controllers
             if (ModelState.IsValid)
             {
                 repository.SaveRecipe(recipe);
-                TempData["message"] = $"{recipe.RecipeName} has been saved!";
+                //TempData["message"] = $"{recipe.RecipeName} has been saved!";
                 return RedirectToAction("RecipeList", "Home");
             }
             else
