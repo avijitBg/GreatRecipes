@@ -40,16 +40,18 @@ namespace GreatRecipes.Models
 
         public Recipe DeleteRecipe(int recipeId)
         {
-            Recipe recipeEntry = context.Recipes
-                .FirstOrDefault(p => p.RecipeId == recipeId);
+            EFReviewRepository efReviewRepository = new EFReviewRepository(context);
+            efReviewRepository.DeleteReview(recipeId);
 
-            if (recipeEntry != null)
+            Recipe dbEntry = context.Recipes
+                .FirstOrDefault(r => r.RecipeId == recipeId);
+
+            if (dbEntry != null)
             {
-                context.Recipes.Remove(recipeEntry);
+                context.Recipes.Remove(dbEntry);
                 context.SaveChanges();
             }
-
-            return recipeEntry;
+            return dbEntry;
         }
     }
 }

@@ -17,12 +17,20 @@ namespace GreatRecipes.Controllers
         }
 
         public ViewResult Index() => View(repository.Recipes);
-
+        /// <summary>
+        /// This method returns the Edit view (GET)
+        /// </summary>
+        /// <param name="recipeId"></param>
+        /// <returns></returns>
         [HttpGet]
         public ViewResult Edit(int recipeId) =>
             View(repository.Recipes
                 .FirstOrDefault(p => p.RecipeId == recipeId));
-
+        /// <summary>
+        /// This method is used to edit a Recipe (POST)
+        /// </summary>
+        /// <param name="recipe"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Edit(Recipe recipe)
         {
@@ -37,6 +45,11 @@ namespace GreatRecipes.Controllers
                 return View(recipe);
             }
         }
+        /// <summary>
+        /// This method is used to delete a Recipe (POST)
+        /// </summary>
+        /// <param name="recipeId"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Delete(int recipeId)
         {
@@ -49,13 +62,20 @@ namespace GreatRecipes.Controllers
 
             return RedirectToAction("RecipeList", "Home");
         }
-
+        /// <summary>
+        /// This method returns the AddRecipe view (GET)
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ViewResult AddRecipe()
         {
             return View();
         }
-
+        /// <summary>
+        /// This method is used to add a recipe by user (POST)
+        /// </summary>
+        /// <param name="userRecipe"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult AddRecipe(Recipe userRecipe)
         {

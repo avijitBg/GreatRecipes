@@ -15,25 +15,29 @@ namespace GreatRecipes.Controllers
         {
             repository = repo;
         }
-
+        /// <summary>
+        /// This method returns the "Home" view (GET)
+        /// </summary>
+        /// <returns></returns>
         public ViewResult Index()
         {
             return View("Home");
         }
-
+        /// <summary>
+        /// This method returns the "RecipeList" view (GET)
+        /// </summary>
+        /// <param name="recipeId"></param>
+        /// <returns></returns>
         [HttpGet]
         public ViewResult RecipeList() => View(repository.Recipes);
-
+        /// <summary>
+        /// This method returns the "ViewRecipe" view (GET)
+        /// </summary>
+        /// <param name="recipeId"></param>
+        /// <returns></returns>
         [HttpGet]
         public ViewResult ViewRecipe(int recipeId) => View(
             repository.Recipes
             .Where(p => p.RecipeId == recipeId));
-
-        [HttpGet]
-        public ViewResult ReviewRecipe()
-        {
-            return View();
-        }
-
     }
 }
