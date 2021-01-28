@@ -12,7 +12,8 @@
     <a asp-route-recipeId=@r.RecipeId
        asp-action="ReviewRecipe">
         <h3>@r.RecipeName</h3>
-    </a><br>
+    </a>
+    <br>
     <h4><em>@r.RecipeOwnerName</em></h4>
     <h3>Ingradients</h3>
     <ul>
@@ -22,11 +23,12 @@
     <ul>
         @r.Directions
     </ul>
+    <h3>You are all set; enjoy your meal now</h3>
+    <ul style="align-content:center">
+        <a asp-action="AddReview" asp-route-RecipeId=@r.RecipeId asp-controller="Review"><h4>Review This Recipe</h4></a>
+    </ul>
 }
-
-<h3>You are all set; enjoy your meal now</h3>
 <p></p>
 <div style="text-align:center">
-    <a asp-action="ReviewRecipe"><h4>Review This Recipe</h4></a>
     <a asp-action="RecipeList"><h4>View Another Recipe</h4></a>
 </div>

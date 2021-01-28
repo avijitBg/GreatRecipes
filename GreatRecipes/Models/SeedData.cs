@@ -106,6 +106,50 @@ namespace GreatRecipes.Models
                  ImageUrl = "/Images/Li'l Cheddar Meat Loaves.jpg"
              }
                 );
+
+                context.Reviews.AddRange(
+new Review
+{
+    Comment = "Great Recipe",
+    Rate = 4,
+    RecipeId = 1
+},
+new Review
+{
+    Comment = "Delicious",
+    Rate = 5,
+    RecipeId = 1
+},
+new Review
+{
+    Comment = "Delicious",
+    Rate = 5,
+    RecipeId = 2
+},
+new Review
+{
+    Comment = "Didn´t like it.",
+    Rate = 2,
+    RecipeId = 3
+},
+new Review
+{
+    Comment = "Good",
+    Rate = 3,
+    RecipeId = 4
+},
+new Review
+{
+    Comment = "Very Good",
+    Rate = 4,
+    RecipeId = 5
+},
+new Review
+{
+    Comment = "Like this recipe",
+    Rate = 4,
+    RecipeId = 5
+});
                 context.SaveChanges();
             }
         }

@@ -13,17 +13,6 @@
     <div id="allpage">
         <header>
             <img style="margin-left:30px; height:250px; width:680px" src="~/Images/header.JPG" />
-            @if (!User.Identity.IsAuthenticated)
-            {
-                <a class="btn btn-primary" asp-action="Login" asp-controller="Account">Login</a>
-            }
-            @if (User.Identity.IsAuthenticated)
-            {
-                <a class="btn btn-primary" asp-action="AddRecipe" asp-controller="Admin">Add Recipe</a>
-                <a class="btn btn-primary"
-                   asp-action="Logout" asp-controller="Account">Log Out</a>
-                <br />
-            }
         </header>
         @RenderBody()
         <p style="text-align:right; color:darkcyan; font-style: italic">&copy; Avijit Bagchi, ID# 301007115<p>

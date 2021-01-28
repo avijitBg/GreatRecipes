@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GreatRecipes.Models.ViewModels;
 
-namespace COMP229_F2019_Recipes.Controllers
+namespace GreatRecipes.Controllers
 {
     [Authorize]
     public class AccountController : Controller

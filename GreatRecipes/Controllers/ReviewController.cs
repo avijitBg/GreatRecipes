@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using GreatRecipes.Models;
 
-namespace COMP229_F2019_Recipes.Controllers
+namespace GreatRecipes.Controllers
 {
     public class ReviewController : Controller
     {

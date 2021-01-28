@@ -9,18 +9,29 @@
         <tbody>
             @foreach (var r in Model)
             {
-                <tr>
-                    <td>
-                        <img src="@r.ImageUrl" />
-                    </td>
-                    <td>
-                        <a asp-route-recipeId=@r.RecipeId
-                           asp-action="ViewRecipe">
-                            <h3>@r.RecipeName</h3>
-                        </a><br>
-                        <h4>@r.BriefDescription</h4>
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    <img src="@r.ImageUrl" />
+                </td>
+                <td>
+                    <a asp-route-recipeId=@r.RecipeId
+                       asp-action="ViewRecipe">
+                        <h3>@r.RecipeName</h3>
+                        <form asp-action="Delete" method="post" asp-controller="Admin">
+                            <input type="hidden" name="RecipeId" value="@r.RecipeId" />
+                            <a class="btn btn-primary" asp-action="ViewRecipe" asp-route-RecipeId=@r.RecipeId asp-controller="Home">View</a>
+                            <a class="btn btn-primary" asp-action="AddReview" asp-route-RecipeId=@r.RecipeId asp-controller="Review">Add Review</a>
+                            <a class="btn btn-primary" asp-action="ReviewList" asp-route-RecipeId=@r.RecipeId asp-controller="Review">List Reviews</a>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <a class="btn btn-warning" asp-action="EditRecipe" asp-route-RecipeId=@r.RecipeId asp-controller="Admin">Edit</a>
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            }
+                        </form>
+                    </a><br>
+                    <h4>@r.BriefDescription</h4>
+                </td>
+            </tr>
             }
         </tbody>
     </table>
