@@ -37,7 +37,7 @@ namespace GreatRecipes
             services.AddTransient<IReviewRepository, EFReviewRepository>();
             services.AddMvc()
                 .AddSessionStateTempDataProvider();
-            services.AddSession();
+            //services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,11 +47,6 @@ namespace GreatRecipes
             {
                 app.UseDeveloperExceptionPage();
             }
-            //app.UseStatusCodePages();
-            //app.UseStaticFiles();
-            //app.UseSession();
-            //app.UseMvcWithDefaultRoute();
-            //app.UseAuthentication();
 
             app.UseStaticFiles();
             app.UseAuthentication();

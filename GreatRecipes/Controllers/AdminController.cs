@@ -55,10 +55,10 @@ namespace GreatRecipes.Controllers
         {
             Recipe deletedRecipe = repository.DeleteRecipe(recipeId);
 
-            if (deletedRecipe != null)
-            {
-                TempData["message"] = $"{deletedRecipe.RecipeName} was deleted!";
-            }
+            //if (deletedRecipe != null)
+            //{
+            //    TempData["message"] = $"{deletedRecipe.RecipeName} was deleted!";
+            //}
 
             return RedirectToAction("RecipeList", "Home");
         }
@@ -82,7 +82,7 @@ namespace GreatRecipes.Controllers
             if (ModelState.IsValid)
             {
                 repository.SaveRecipe(userRecipe);
-                TempData["message"] = $"{userRecipe.RecipeName} has been added!";
+                //TempData["message"] = $"{userRecipe.RecipeName} has been added!";
                 return RedirectToAction("RecipeList", "Home");
             }
             else
