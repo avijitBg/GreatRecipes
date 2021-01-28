@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GreatRecipes.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210128032132_InitialCreate")]
+    [Migration("20210128045006_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

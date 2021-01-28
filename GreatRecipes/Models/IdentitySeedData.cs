@@ -11,10 +11,10 @@ namespace GreatRecipes.Models
     public static class IdentitySeedData
     {
         private const string adminUser = "Avijit";
-        private const string adminPassword = "Secret123$";
+        private const string adminPassword = "123456";
 
         private const string managerUser = "Atika";
-        private const string managerPassword = "Secret123$";
+        private const string managerPassword = "123456";
 
         private const string adminRoleName = "Admin";
         private const string managerRoleName = "Manager";
@@ -54,7 +54,7 @@ namespace GreatRecipes.Models
             {
                 user = new IdentityUser(adminUser);
                 await userManager.CreateAsync(user, adminPassword);
-                await userManager.AddToRoleAsync(user, adminRoleName);
+                //await userManager.AddToRoleAsync(user, adminRoleName);
             }
             else
             {
@@ -71,7 +71,7 @@ namespace GreatRecipes.Models
             {
                 managerUserIdentity = new IdentityUser(managerUser);
                 await userManager.CreateAsync(managerUserIdentity, managerPassword);
-                await userManager.AddToRoleAsync(managerUserIdentity, managerRoleName);
+                //await userManager.AddToRoleAsync(managerUserIdentity, managerRoleName);
             }
             else
             {

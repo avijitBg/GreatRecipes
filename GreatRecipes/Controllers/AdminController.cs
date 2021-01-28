@@ -30,7 +30,7 @@ namespace GreatRecipes.Controllers
             {
                 repository.SaveRecipe(recipe);
                 TempData["message"] = $"{recipe.RecipeName} has been saved!";
-                return RedirectToAction("Index");
+                return RedirectToAction("RecipeList", "Home");
             }
             else
             {
@@ -47,7 +47,7 @@ namespace GreatRecipes.Controllers
                 TempData["message"] = $"{deletedRecipe.RecipeName} was deleted!";
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("RecipeList", "Home");
         }
 
         [HttpGet]
@@ -63,7 +63,7 @@ namespace GreatRecipes.Controllers
             {
                 repository.SaveRecipe(userRecipe);
                 TempData["message"] = $"{userRecipe.RecipeName} has been added!";
-                return RedirectToAction("Index");
+                return RedirectToAction("RecipeList", "Home");
             }
             else
             {

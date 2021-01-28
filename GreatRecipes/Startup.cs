@@ -53,6 +53,7 @@ namespace GreatRecipes
             app.UseMvcWithDefaultRoute();
 
             SeedData.EnsurePopulated(app);
+            IdentitySeedData.EnsurePopulated(app);
         }
     }
 }

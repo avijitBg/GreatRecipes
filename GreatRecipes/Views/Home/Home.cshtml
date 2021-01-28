@@ -5,16 +5,17 @@
 <div style="text-align:center">
     <img alt="Picture of chicken piccata" src="~/Images/HomepagePhoto.jpg" style="width: 300px; height: 260px" />
     <a asp-controller="Home" asp-action="RecipeList"><h4>See Our Recipes</h4></a><br>
-    @if (!User.Identity.IsAuthenticated)
-    {
-        <a class="btn btn-primary" asp-action="Login" asp-controller="Account">Login</a>
-    }
-    @if (User.Identity.IsAuthenticated)
-    {
-        <a style="align-content:center" class="btn btn-primary" asp-action="AddRecipe" asp-controller="Admin">Add Recipe</a>
-        <a class="btn btn-primary"
-           asp-action="Logout" asp-controller="Account">Log Out</a>
-        <br />
-    }
+    <a asp-controller="Admin" asp-action="AddRecipe"><h4>Add Your Own Recipe</h4></a><br>
+    @*@if (!User.Identity.IsAuthenticated)
+        {
+            <a class="btn btn-primary" asp-action="Login" asp-controller="Account">Login</a>
+        }
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a style="align-content:center" class="btn btn-primary" asp-action="AddRecipe" asp-controller="Admin">Add Recipe</a>
+            <a class="btn btn-primary"
+               asp-action="Logout" asp-controller="Account">Log Out</a>
+            <br />
+        }*@
 </div>
 

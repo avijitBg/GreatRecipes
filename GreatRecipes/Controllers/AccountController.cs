@@ -45,7 +45,7 @@ namespace GreatRecipes.Controllers
                     if ((await signInManager.PasswordSignInAsync(user,
                         loginModel.Password, false, false)).Succeeded)
                     {
-                        return Redirect(loginModel?.ReturnUrl ?? "/Home/RecipeList");
+                        return Redirect(loginModel?.ReturnUrl ?? "/Home");
                     }
 
                 }
