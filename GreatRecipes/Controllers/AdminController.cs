@@ -54,12 +54,6 @@ namespace GreatRecipes.Controllers
         public IActionResult Delete(int recipeId)
         {
             Recipe deletedRecipe = repository.DeleteRecipe(recipeId);
-
-            //if (deletedRecipe != null)
-            //{
-            //    TempData["message"] = $"{deletedRecipe.RecipeName} was deleted!";
-            //}
-
             return RedirectToAction("RecipeList", "Home");
         }
         /// <summary>

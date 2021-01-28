@@ -54,7 +54,7 @@ namespace GreatRecipes.Controllers
         public IActionResult AddReview(Review review)
         {
             reviewRepository.SaveReview(review);
-             TempData["message"] = $"Review has been saved!";
+            //TempData["message"] = $"Review has been saved!";
             return RedirectToAction("RecipeList", controllerName: "Home");
         }
 
