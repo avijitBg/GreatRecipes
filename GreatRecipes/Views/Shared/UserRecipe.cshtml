@@ -36,12 +36,12 @@
         <button type="submit" class="btn btn-dark">Save Recipe</button>
         @using (Html.BeginForm("RecipeList", "Home"))
         {
-            <button type="submit" class="btn btn-dark">Cancel</button>
+            <button type="submit" class="btn btn-dark" asp-action="Index" asp-controller="Home">Cancel</button>
         }
     </form>
     <p></p>
-    <div>
-        <a asp-action="Index"><h4>Back to Homepage</h4></a>
+    <div class="text-center">
+        <a asp-action="Index" asp-controller="Home"><h4>Back to Homepage</h4></a>
         <p></p>
     </div>
 </div>
